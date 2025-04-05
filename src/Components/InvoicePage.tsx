@@ -36,10 +36,9 @@ const InvoicePage = () => {
   };
 
   return (
-    <div className="invoice-page">
-      <h1>Invoice Payment</h1>
-      <div className="invoice-details">
-        <p>Service: Premium Subscription</p>
+    <div className="w-full h-screen inset-0 flex flex-col items-center justify-center p-4 bg-gray-100">
+      <h1 className='font-semibold text-black'>Invoice Payment</h1>
+      <div className="text-black">
         <p>Amount: 0.1 BNB</p>
         <p>Due Date: April 15, 2025</p>
       </div>
@@ -47,7 +46,7 @@ const InvoicePage = () => {
       <button 
         onClick={handlePayInvoice}
         disabled={isLoading}
-        className="pay-button"
+        className="border border-gray-800 text-black px-12 py-4 rounded-md mt-4"
       >
         {isLoading ? 'Processing...' : 'Pay Invoice'}
       </button>
@@ -67,7 +66,7 @@ const InvoicePage = () => {
       )}
       
       {error && (
-        <div className="error-message">
+        <div className="text-red-700">
           <p>Transaction Failed. Please try again.</p>
         </div>
       )}
